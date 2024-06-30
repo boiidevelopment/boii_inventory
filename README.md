@@ -2,6 +2,8 @@
 
 ![INVENTORY_THUMB](https://github.com/boiidevelopment/boii_inventory/assets/90377400/5452c7d5-1b03-4f46-8b48-390ffa60739a)
 
+# THIS RESOURCE IS STILL IN ALPHA STAGES IT WILL BE IMPROVED ON. SOME BUGS ARE TOO BE EXPECTED!
+
 ## 📹 Preview
 
 **[YouTube](https://www.youtube.com/watch?v=Xpif-1YezUQ)**
