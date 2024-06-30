@@ -1,0 +1,224 @@
+/*
+     ____   ____ _____ _____   _   _____  ________      ________ _      ____  _____  __  __ ______ _   _ _______ 
+    |  _ \ / __ \_   _|_   _| | | |  __ \|  ____\ \    / /  ____| |    / __ \|  __ \|  \/  |  ____| \ | |__   __|
+    | |_) | |  | || |   | |   | | | |  | | |__   \ \  / /| |__  | |   | |  | | |__) | \  / | |__  |  \| |  | |   
+    |  _ <| |  | || |   | |   | | | |  | |  __|   \ \/ / |  __| | |   | |  | |  ___/| |\/| |  __| | . ` |  | |   
+    | |_) | |__| || |_ _| |_  | | | |__| | |____   \  /  | |____| |___| |__| | |    | |  | | |____| |\  |  | |   
+    |____/ \____/_____|_____| | | |_____/|______|   \/   |______|______\____/|_|    |_|  |_|______|_| \_|  |_|   
+                              | |                                                                                
+                              |_|                INVENTORY
+*/
+
+
+/* Inventory Container */
+.grid_inventory,
+.other_grid_inventory {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    left: 60vw;
+    top: 8vh;
+    padding: 10px;
+    background-color: var(--background);
+    color: white;
+    font-family: 'Kanit';
+    border-radius: 16px;
+    box-shadow: var(--box_shadow_two_tone);
+    opacity: 1;
+}
+
+.other_grid_inventory {
+    position: fixed;
+    left: 5vw;
+    height: fit-content;
+}
+
+.grid_inventory h3 {
+    margin-left: 5px;
+}
+
+/* Grid Inventory Container */
+.grid_inventory_container {
+    background-color: var(--secondary_background);
+    border-radius: 16px;
+    opacity: 1;
+    box-shadow: var(--box_shadow);
+}
+
+.grid_inventory_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.grid_header_buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.grid_header_btn {
+    border: none;
+    height: 2vh;
+    width: 2vw;
+    background: var(--accent_colour);
+    font-size: 1.3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    color: var(--text_colour);
+    box-shadow: var(--box_shadow_inset);
+    opacity: 0.85;
+}
+
+.grid_header_btn i {
+    padding: 2px;
+}
+
+.grid_header_btn:not(:last-child) {
+    margin-right: 10px;
+}
+
+.grid_header_btn:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+/* Weight Bar */
+.grid_weight_bar_container {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    box-shadow: var(--box_shadow);
+    border-radius: 16px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.grid_weight_bar {
+    width: 100%;
+    height: 1.5vh;
+    background: #1f1e1e;
+    box-shadow: var(--box_shadow);
+    border-radius: 16px;
+    opacity: 1;
+    cursor: pointer;
+    position: relative; 
+}
+
+.grid_weight {
+    height: 100%;
+    background-color: var(--accent_colour);
+    border-radius: 16px;
+    box-shadow: var(--box_shadow_inset);
+}
+
+.weight_tooltip {
+    position: absolute;
+    bottom: -25%;
+    right: 0;
+    display: none;
+    color: white;
+    padding: 5px 10px;
+    white-space: nowrap;
+    z-index: 10;
+    font-family: var(--text_font_family);
+    font-size: 1vh;
+}
+
+/* Item Grid */
+.grid,
+.other_grid {
+    display: grid;
+    gap: 2px;
+    position: relative;
+    height: fit-content;
+    width: fit-content;
+    max-width: 660px;
+    max-height: 660px;
+    border-radius: 16px;
+    background-color: var(--secondary_background);
+}
+
+.grid {
+    grid-template-columns: repeat(10, 64px);
+    grid-template-rows: repeat(10, 64px);
+}
+
+.grid_inv_cell,
+.other_inv_cell {
+    width: 64px;
+    height: 64px; 
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Item */
+.item,
+.other_item {
+    position: absolute;
+    background-color: var(--tertiary_background);
+    cursor: grab;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    opacity: 0.95;
+}
+
+.item_quantity {
+    position: absolute;
+    top: 0;
+    right: 3%;
+    font-size: 1vh;
+    color: white;
+    text-align: right;
+    font-family: 'Kanit';
+    color: white;
+    text-shadow: var(--text_shadow);
+}
+
+.item_quality {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--secondary_background);
+    overflow: hidden;
+}
+
+.item_quality-bar {
+    height: 100%;
+    background-color: var(--accent_colour);
+}
+
+.item-slot {
+    position: absolute;
+    top: 0;
+    left: 0.25vw;
+    font-size: 1.2vh;
+    font-family: 'Kanit';
+    color: white;
+    text-shadow: var(--text_shadow);
+}
+
+.item_ammo_count {
+    position: absolute;
+    bottom: 5%;
+    right: 3%;
+    font-size: 1.2vh;
+    font-family: 'Kanit';
+    color: white;
+    text-shadow: var(--text_shadow);
+    display: flex;
+    align-items: center;
+}
+
+.item_ammo_count i {
+    font-size: 1vh;
+    padding: 2px;
+    margin-right: 5px;
+}
